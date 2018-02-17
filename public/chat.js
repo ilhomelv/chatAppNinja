@@ -1,12 +1,10 @@
 //make connection
 //var socket is not same variable as one in index.js
-<<<<<<< HEAD
-//var socket = io.connect('http://localhost:4000'); //user socket
-=======
->>>>>>> 629e1912a3a14a1f33f395a44f3615bfdf853dfc
-var socket = io.connect('http://chat.uzkino.com:80'); //user socket
+var socket = io.connect('http://localhost:4000'); //user socket
+//var socket = io.connect('http://chat.uzkino.com:80'); //user socket
 
-var message = document.getElementById('message'),
+var chatWindow = document.getElementById('chat-window'),
+    message = document.getElementById('message'),
     handle = document.getElementById('handle'),
     btn = document.getElementById('send'),
     output = document.getElementById('output'),
@@ -30,6 +28,10 @@ message.addEventListener('keypress', function(){
 socket.on('chat', function(data){
     typing.innerHTML = ""; //clears: is typing a message...
     output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '</p>';
+    //keep window scroll down
+    var xH = chatWindow.scrollHeight;
+    chatWindow.scrollTo(0, xH);
+    console.log(chatWindow.scrollHeight);
 });
 
 socket.on('typingMsg', function(data){
