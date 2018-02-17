@@ -31,7 +31,7 @@ socket.on('chat', function(data){
     //keep window scroll down
     var xH = chatWindow.scrollHeight;
     chatWindow.scrollTo(0, xH);
-    console.log(chatWindow.scrollHeight);
+    //console.log(chatWindow.scrollHeight);
 });
 
 socket.on('typingMsg', function(data){
