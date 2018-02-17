@@ -1,6 +1,7 @@
 //make connection
 //var socket is not same variable as one in index.js
-var socket = io.connect('http://localhost:4000'); //user socket
+//var socket = io.connect('http://localhost:4000'); //user socket
+var socket = io.connect('http://chat.uzkino.com:80'); //user socket
 
 var message = document.getElementById('message'),
     handle = document.getElementById('handle'),
